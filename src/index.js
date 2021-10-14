@@ -12,7 +12,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-reportWebVitals();  */
+reportWebVitals();*/
 
 const Elemento = () => <p>"Hola Mundo"</p>
 ReactDOM.render(
