@@ -2,7 +2,7 @@ import React from "react";
 import carrito from '../../Imagenes/carrito.png';
 import './Carrito.css';
 
-export default function Carrito(){
+ const Carrito = () => {
     return (
         <>      
             <img id = "carrito" src={carrito}/>
@@ -10,3 +10,5 @@ export default function Carrito(){
         </>
     )
 }
+
+export default Carrito;

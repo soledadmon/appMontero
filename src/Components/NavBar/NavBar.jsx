@@ -5,8 +5,7 @@ import  Carrito from '../Carrito/Carrito';
 export default function NavBar(){
     return (
         <>  
-            <div> 
-            
+                       
             <div id="barra">
                 <ul>
                     <li><a href="#">Elemento 1</a></li>
@@ -16,7 +15,7 @@ export default function NavBar(){
                     <li><Carrito/></li>
                 </ul>
             </div>
-            </div>
+           
         </>
     )
 }
