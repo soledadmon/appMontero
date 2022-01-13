@@ -3,7 +3,7 @@ import React from "react";
 const ItemListContainer = ({dato}) =>{
     return (
         <>   
-           <button onClick = {() => alert(dato)}> Cilc para probar alerta </button>  
+           <button style= {{backgroundColor: 'pink'}} onClick = {() => alert(dato)}> Cilc para probar alerta </button>  
                     
         </>
     )
