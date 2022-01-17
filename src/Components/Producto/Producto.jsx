@@ -6,7 +6,7 @@ export default function Producto({ item }) {
         <>
             <p> {item.nombre} </p>
             <p> {"Stock disponible = " + item.stock} </p>
-            <ItemCount item={" " + item.stock + " "}/>  
+            <ItemCount item={item}/>  
         </>
     )
 }
