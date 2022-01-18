@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ItemCount from "../ItemCount/ItemCount.jsx";
 
-export default function Producto({ item }) {
+export default function Item({ item }) {
     return (
         <>
             <p> {item.nombre} </p>
