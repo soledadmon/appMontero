@@ -1,6 +1,7 @@
 #barra ul{
     list-style-type: none;
     text-align: center;
+  
  }
 
  #barra li{
@@ -15,6 +16,8 @@
     background-color: #eeeeee;
     border: 1px solid #ccc;
     text-decoration: none;
+    font-size: 150%;
+    font-family: cursive;
  }
 
  #barra li a:hover{

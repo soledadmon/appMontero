@@ -35,13 +35,12 @@ export default function ItemCount({ item }) {
     return (
         <>
             
-            <p> <button style={{ backgroundColor: 'pink' }} onClick={() => restar()}> - </button>
+            <p> <button id="botones" style={{ fontFamily: "cursive" }} onClick={() => restar()}> <b>-</b> </button>
                 {" " + cantidadActual + " "}
-                <button style={{ backgroundColor: 'pink' }} onClick={() => sumar()}> + </button>
+                <button id="botones" style={{ fontFamily: "cursive" }} onClick={() => sumar()}> <b>+</b> </button>
             </p>
-            <button style={{ backgroundColor: 'pink' }} onClick={() => onAdd()}> Agregar al carrito </button>
-            <br/>
-            <br/>
+            <button id="botones" style={{ fontFamily: "cursive"  }} onClick={() => onAdd()}> <b>Agregar al carrito</b> </button>
+            
         </>
     )
 }

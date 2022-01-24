@@ -1,0 +1,20 @@
+#imagenGustos {
+  width: 100px;
+  height: 100px;
+}
+
+#divGustos {
+  border: rgb(245, 238, 250) 8px outset;
+  width: 350px;
+  height: 320px;
+  margin: 10px;
+  display: inline-block;
+  background-color: rgb(232, 250, 251);
+  text-align: center;
+  
+}
+
+p{
+  color:rgb(39, 38, 39);
+  font-family: cursive;
+}
