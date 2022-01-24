@@ -42,7 +42,7 @@ export default function ItemDetailContainer() {
 
     const [llegoPromesa, setLlegoPromesa] = useState(false);
 
-    const productos = new Promise((resolve, reject) => {
+    const getItem = new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(  items.filter(item => item.categoriaId == itemId));
             reject("Server Caido");
@@ -51,7 +51,7 @@ export default function ItemDetailContainer() {
     });
 
     useEffect(() => {
-        productos
+        getItem
             .then(res => {
                 setLlegoPromesa(true);
                 setItems(res);
