@@ -5,6 +5,7 @@ import NavBar from './Components/NavBar/NavBar';
 import ItemListContainer from './Components/Productos/ItemListContainer';
 import CategoriaListContainer from './Components/Categorias/CategoriaListContainer';
 import ItemDetailConteiner from './Components/DetalleProductos/ItemDetailConteiner';
+import portada from './Imagenes/portada.jpg';
 
 //<ItemListContainer />
 function App() {
@@ -17,7 +18,11 @@ function App() {
 
           {/* ruta home */}
           <Route exact path="/">
-
+            <>
+              <div id="portada">
+                <img id="imagenportada" src={portada} />
+              </div>
+            </>
           </Route>
 
 

@@ -5,14 +5,15 @@ import ItemCount from "../ItemCount/ItemCount.jsx";
 export default function ItemDetail({ item }) {
     return (
         <>
-            
-            <img id = "imagenGustos"  src={item.imagen}/>
-            <p> {item.nombre} </p>
-            <p> {item.descripcion} </p>
-            <p> {item.precio} </p>
-            <p> {"Stock disponible = " + item.stock} </p>
-            <ItemCount item={item} />
-             
+            <div id="divDetalle">
+                <img id="imagenDetalle" src={item.imagen} />
+                <p> {item.nombre} </p>
+                <p> {item.descripcion} </p>
+                <h1> {item.precio} </h1>
+                <h2> {item.detalle} </h2>
+                <p> {"Stock disponible = " + item.stock} </p>
+                <ItemCount item={item} />
+            </div>
         </>
     )
 }

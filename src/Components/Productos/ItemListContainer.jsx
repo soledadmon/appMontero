@@ -20,7 +20,7 @@ export default function ItemListContainer() {
         
         [
         {id:'1', nombre: 'Helado de Vainilla',imagen: vainilla,  descripcion:'El mejor cremoso helado de vainilla', stock: 10, cantInicial: 2, categoriaId: '1' },
-        {id:'2', nombre: 'Helado de Chocolate',imagen:chocolate,descripcion:'Super cremoso y con todo el sabor a chocolate',stock: 4, cantInicial: 0, categoriaId: '1' },
+        {id:'2', nombre: 'Helado de Chocolate',imagen:chocolate, descripcion:'Con todo el sabor a chocolate',stock: 4, cantInicial: 0, categoriaId: '1'},
         {id:'3', nombre: 'Helado de Frutilla',imagen:frutilla,descripcion:'Super cremoso y con trozos de frutilla',stock: 4, cantInicial: 0, categoriaId: '1' },
         {id:'4', nombre: 'Heledo de Dulce de Leche',imagen:dulceDeLecheGranizado, descripcion:'El mejor dulce de leche hecho helado',stock: 8, cantInicial: 4, categoriaId: '1' },
         {id:'5', nombre: 'Postre Almendrado',imagen:PostreAlmendrado,  descripcion:'12 porciones',stock: 10, cantInicialId: 1, categoriaId: '2' },
