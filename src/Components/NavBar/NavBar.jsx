@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import './NavBar.css';
-import Carrito from '../Carrito/Carrito';
+import Carrito from '../Carrito/CartWidget';
 
 export default function NavBar() {
     return (

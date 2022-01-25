@@ -1,8 +1,8 @@
 import React from "react";
 import carrito from '../../Imagenes/carrito.png';
-import './Carrito.css';
+import './CartWidget.css';
 
- const Carrito = () => {
+ const CartWidget = () => {
     return (
         <>      
             <img id = "carrito" src={carrito}/>
@@ -11,4 +11,4 @@ import './Carrito.css';
     )
 }
 
-export default Carrito;
+export default CartWidget;
