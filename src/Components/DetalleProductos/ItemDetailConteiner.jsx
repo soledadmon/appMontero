@@ -16,7 +16,7 @@ import promokg from '../../Imagenes/promokg.jpg';
 export default function ItemDetailContainer() {
 
 
-    const { itemId } = useParams();
+    const { id } = useParams();
 
     const [items, setItems] = useState(
 
@@ -44,7 +44,7 @@ export default function ItemDetailContainer() {
 
     const getItem = new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(  items.filter(item => item.id == itemId));
+            resolve(  items.filter(item => item.id == id));
             reject("Server Caido");
         }, 2000)
 

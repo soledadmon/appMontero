@@ -9,10 +9,10 @@ export default function NavBar() {
             <div id="barra">
                 <ul>
                     <li><a href="/">Inicio</a></li>
-                    <li><a href="/productos">Productos</a></li>
-                    <li><a href="/categorias/1">Sabores</a></li>
-                    <li><a href="/categorias/2">Postres</a></li> 
-                    <li><a href="/categorias/3">Promociones</a></li>                   
+                    <li><a href="/categorias">Categorias</a></li>
+                    <li><a href="/category/1">Sabores</a></li>
+                    <li><a href="/category/2">Postres</a></li> 
+                    <li><a href="/category/3">Promociones</a></li>                   
                     <li><a href="#">Contacto</a></li>
                     <li><Carrito /></li>
                 </ul>
