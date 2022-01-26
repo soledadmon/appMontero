@@ -1,3 +1,34 @@
+# Ejecucion 
+ejecutar el proyecto iniciar con el comando npm start
+
+# Inicio
+El proyecto comenzará con una página de inicio, en esta instancia solo contiene:
+- la barra de navegación con el ítem carrito 
+- en el div principal que en esta instancia contiene una imagen importada de la carpeta imágenes
+
+# Estructura
+La página contendrá categorías propias de una heladería, dentro de cada categoría están los productos que corresponden a cada categoría.
+Cada producto tiene sus detalles y su contador para administrar a futro el stock.
+# Solo para cumplir con los requerimientos de esta entrega hay una ruta para mostrar todos los productos pero la idea a futuro es solo mostrarlos por categoría
+
+# Rutas establecidas
+
+/             -> Portada o página de inicio
+
+/category/:id -> muestra los productos de una categoría 
+
+/productos    -> muestra todos los productos que tiene la heladería
+
+/categorias   -> muestra todas las categorías por las cuales se agrupan los productos
+
+/item/:id     -> muestra el detalle del producto
+
+# navbar 
+- la navbar tiene prestablecidas todas las rutas salvo la ruta al detalle que solo se puede acceder desde la barra con /category/:id, la diferencia ente el producto y el detalle del producto se ve sobre todo en la categoria dos y tres no tanto en la 1, osea para los id > 4
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

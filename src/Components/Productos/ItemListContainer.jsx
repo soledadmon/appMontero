@@ -39,7 +39,10 @@ export default function ItemListContainer() {
 
     const productos = new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve (items.filter(item => item.categoriaId == id));
+            (id > 0)?
+            resolve (items.filter(item => item.categoriaId == id))
+            :
+            resolve (items)
             reject("Server Caido");
         }, 2000)
 

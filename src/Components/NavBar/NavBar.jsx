@@ -13,7 +13,7 @@ export default function NavBar() {
                     <li><a href="/category/1">Sabores</a></li>
                     <li><a href="/category/2">Postres</a></li> 
                     <li><a href="/category/3">Promociones</a></li>                   
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="/productos">Todos los productos</a></li>
                     <li><Carrito /></li>
                 </ul>
             </div>

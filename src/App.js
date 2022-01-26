@@ -30,6 +30,10 @@ function App() {
             <ItemListContainer />
           </Route>
 
+          <Route exact path="/productos">
+            <ItemListContainer />
+          </Route>
+
           <Route exact path="/categorias">
             <CategoriaListContainer />
           </Route>
@@ -38,6 +42,7 @@ function App() {
             <ItemDetailConteiner />
           </Route>
 
+         
 
         </Switch>
       </BrowserRouter>
