@@ -24,7 +24,7 @@ Cada producto tiene sus detalles y su contador para administrar a futro el stock
 /item/:id     -> muestra el detalle del producto
 
 # navbar 
-- la navbar tiene prestablecidas todas las rutas salvo la ruta al detalle que solo se puede acceder desde la barra con /category/:id, la diferencia ente el producto y el detalle del producto se ve sobre todo en la categoria dos y tres no tanto en la 1, osea para los id > 4
+- la navbar tiene prestablecidas todas las rutas salvo la ruta al detalle que solo se puede acceder desde la barra con /category/:id o desde el botón "Ver Detalle" que esta en el Item (Producto), la diferencia ente el producto y el detalle del producto se ve sobre todo en la categoria dos y tres no tanto en la 1, osea para los id > 4
 
 
 
