@@ -1,13 +1,15 @@
 import React, { Component, useState } from "react";
+import { Link } from 'react-router-dom';
 import './ItemDetail.css';
 import ItemCount from "../ItemCount/ItemCount.jsx";
 
 export default function ItemDetail({ item }) {
 
+    const [mostrarItemCount, setmostrarItemCount] = useState(true);
 
     function onAdd(cantidadActual) {
-        
         alert("Agregue " + cantidadActual + " elementos")
+        setmostrarItemCount(false)
     }
 
     return (
@@ -19,7 +21,14 @@ export default function ItemDetail({ item }) {
                 <h1> {item.precio} </h1>
                 <h2> {item.detalle} </h2>
                 <p> {"Stock disponible = " + item.stock} </p>
-                <ItemCount item={item} onAdd={onAdd} />
+                {(mostrarItemCount) ?
+                    <ItemCount item={item} onAdd={onAdd} />
+                    :
+                    <Link to={"/cart/"} > <button id="botones" style={{ fontFamily: "cursive" }}> <b>Terminar Compra</b> </button> </Link>
+
+                    
+
+                }
             </div>
         </>
     )
