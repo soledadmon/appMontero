@@ -1,8 +1,15 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import './ItemDetail.css';
 import ItemCount from "../ItemCount/ItemCount.jsx";
 
 export default function ItemDetail({ item }) {
+
+
+    function onAdd(cantidadActual) {
+        
+        alert("Agregue " + cantidadActual + " elementos")
+    }
+
     return (
         <>
             <div id="divDetalle">
@@ -12,7 +19,7 @@ export default function ItemDetail({ item }) {
                 <h1> {item.precio} </h1>
                 <h2> {item.detalle} </h2>
                 <p> {"Stock disponible = " + item.stock} </p>
-                <ItemCount item={item} />
+                <ItemCount item={item} onAdd={onAdd} />
             </div>
         </>
     )

@@ -1,37 +1,26 @@
 import React, { Component, useState } from "react";
-
-
-export default function ItemCount({ item }) {
+export default function ItemCount({ item, onAdd }) {
     
-    function onAdd(){
-        alert("Elemento agregado")
-    }
-     
-    const[cantidadActual, setcantidadActual] = useState(item.cantInicial);
-   
-
-    function sumar(){    
+    const [cantidadActual, setcantidadActual] = useState(item.cantInicial);
+    function sumar() {
         if (cantidadActual > item.stock - 1)
             alert("Se a alcaczado la cantidad de elementos disponible, NO se pueden agregar mas productos");
-        else 
-        {   
+        else {
             let aux = cantidadActual;
             aux = cantidadActual + 1;
             setcantidadActual(aux);
         };
     }
 
-    function restar(){
+    function restar() {
         if (cantidadActual <= 0)
             alert("NO hay elementos a descontar");
-        else 
-        {   
+        else {
             let aux = cantidadActual;
             aux = cantidadActual - 1;
             setcantidadActual(aux);
         };
     }
-
     return (
         <>
             
@@ -39,7 +28,7 @@ export default function ItemCount({ item }) {
                 {" " + cantidadActual + " "}
                 <button id="botones" style={{ fontFamily: "cursive" }} onClick={() => sumar()}> <b>+</b> </button>
             </p>
-            <button id="botones" style={{ fontFamily: "cursive"  }} onClick={() => onAdd()}> <b>Agregar al carrito</b> </button>
+            <button id="botones" style={{ fontFamily: "cursive"  }} onClick={() => onAdd(cantidadActual)}> <b>Agregar al carrito</b> </button>
             
         </>
     )
