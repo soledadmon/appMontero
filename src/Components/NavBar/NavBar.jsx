@@ -17,7 +17,7 @@ export default function NavBar() {
                     <li><NavLink to = {"/productos"}>Todos los productos</NavLink></li>
                     <li><Carrito /></li>
                 </ul>
-            </div>
+            </div> 
 
         </>
     )
