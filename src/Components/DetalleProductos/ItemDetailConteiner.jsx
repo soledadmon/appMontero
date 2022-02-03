@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { BrowserRouter, Switch, Route, useParams, Link } from 'react-router-dom';
 import ItemDetail from "./ItemDetail";
 import vainilla from '../../Imagenes/vainilla.jpg';
@@ -11,6 +11,7 @@ import PostreFantasia from '../../Imagenes/PostreFantasia.jpg';
 import promo2_1 from '../../Imagenes/promo2_1.jpg';
 import promo4s from '../../Imagenes/promo4s.jpg';
 import promokg from '../../Imagenes/promokg.jpg';
+import { cartContext } from "../Carrito/CartProvider";
 
 
 export default function ItemDetailContainer() {
@@ -63,10 +64,21 @@ export default function ItemDetailContainer() {
             })
     });
 
+
+    const {agregarAlCarrito} = useContext(cartContext)
+    const [mostrarItemCount, setmostrarItemCount] = useState(true);
+
+    function onAdd(cantidadActual) {
+        agregarAlCarrito(items[0], cantidadActual)
+        alert("Agregue " + cantidadActual + " elementos")
+        setmostrarItemCount(false)
+    }
+
+
     return (
         <> {
             (llegoPromesa) ?
-                <ItemDetail item={items[0]} />
+                <ItemDetail item={items[0]} onAdd= {onAdd} mostrarItemCount = {mostrarItemCount}/>
                 : <>Loading details..</>
         }
         </>

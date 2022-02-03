@@ -3,14 +3,7 @@ import { Link } from 'react-router-dom';
 import './ItemDetail.css';
 import ItemCount from "../ItemCount/ItemCount.jsx";
 
-export default function ItemDetail({ item }) {
-
-    const [mostrarItemCount, setmostrarItemCount] = useState(true);
-
-    function onAdd(cantidadActual) {
-        alert("Agregue " + cantidadActual + " elementos")
-        setmostrarItemCount(false)
-    }
+export default function ItemDetail({ item , mostrarItemCount, onAdd}) {
 
     return (
         <>
