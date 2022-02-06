@@ -34,14 +34,30 @@ const CartProvaider = ({ children }) => {
         setCart([]);
     }
 
-    const isInCart = (id) => {
+    //retorna la cantidad de elementos del carrito
+    const cantElemInCart = cart.reduce((total, item) => {
+        return total + item.cantidad
+    }, 0)
+
+
+
+
+    //retorna la suma total de dinero acumulado en el carrito
+    const sumPrecioElemInCart = cart.reduce((total, item) => {
+        const cantidad = item.cantidad;
+        const valor = item.item.precio;
+        const precioTotal = cantidad * valor;
+        return total + precioTotal;
+    }, 0)
+
+       const isInCart = (id) => {
         //retorna true si existe el elemento
         return cart.some(element => element.item.id === id)
     }
 
     return (
         <>
-            <cartContext.Provider value={{ cart, agregarAlCarrito , quitarDelCarrito, vaciarCarrito}}>
+            <cartContext.Provider value={{ cart, agregarAlCarrito, quitarDelCarrito, vaciarCarrito, cantElemInCart, sumPrecioElemInCart }}>
                 {children}
 
             </cartContext.Provider>

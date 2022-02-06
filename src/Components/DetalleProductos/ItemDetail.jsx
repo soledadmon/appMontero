@@ -11,7 +11,7 @@ export default function ItemDetail({ item , mostrarItemCount, onAdd}) {
                 <img id="imagenDetalle" src={item.imagen} />
                 <p> {item.nombre} </p>
                 <p> {item.descripcion} </p>
-                <h1> {item.precio} </h1>
+                <h1> {item.precio + "$"} </h1>
                 <h2> {item.detalle} </h2>
                 <p> {"Stock disponible = " + item.stock} </p>
                 {(mostrarItemCount) ?
