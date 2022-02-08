@@ -22,7 +22,7 @@ const Cart = () => {
                 <div>
                     {cart.map(elemento => <CarritoItem key={elemento.item.id} producto={elemento} />)}
                     <button onClick={() => vaciarCarrito()}> Vaciar Carrito </button>
-                    <p>{"el carrito tiene " + cantElemInCart + " elementos"} </p> 
+                    <p>{"El carrito tiene " + cantElemInCart + " elementos"} </p> 
                     <p>{"El precio total es " + sumPrecioElemInCart + " pesos uruguayos"} </p> 
                     
                 </div>
