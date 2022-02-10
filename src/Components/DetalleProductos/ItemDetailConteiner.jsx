@@ -8,6 +8,7 @@ import { getFirestore } from "../../firebase/firebase";
 
 export default function ItemDetailContainer() {
 
+    const { id } = useParams();
     const [item, setItem] = useState();
     const [llegoPromesa, setLlegoPromesa] = useState(false);
 
@@ -15,7 +16,7 @@ export default function ItemDetailContainer() {
     useEffect(() => {
         const base = getFirestore();
         const coleccionItems = base.collection("items") 
-        const elemento = coleccionItems.doc('1xUfrzGuiZGMFNKof5ea');
+        const elemento = coleccionItems.doc(id);
        
 
         elemento.get().then((elem) =>
