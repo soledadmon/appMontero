@@ -26,8 +26,6 @@ export default function ItemListContainer() {
         const base = getFirestore();
         const coleccionItems = base.collection("items")
 
-
-
         coleccionItems.get().then((querySnapShot) => {
             if (querySnapShot.size === 0) {
                 alert("No se encontraron productos para mostrar")

@@ -4,39 +4,35 @@ import CategoriaList from './CategoriaList.jsx';
 import sabores from '../../Imagenes/sabores.jpg';
 import postres from '../../Imagenes/postres.jpg';
 import promociones from '../../Imagenes/promociones.jpg';
-
+import firebase from "firebase/app";
+import "firebase/firestore";
+import { getFirestore } from "../../firebase/firebase";
 export default function CategoriaListContainer() {
     
-   
-
-    const [items, setItems] = useState([
-        {id:'1', nombre: 'Sabores',imagen: sabores},
-        {id:'2', nombre: 'Postres',imagen:postres },
-        {id:'3', nombre: 'Promociones',imagen:promociones },
-        
-    ]);
+    const [items, setItems] = useState();
     const [llegoPromesa, setLlegoPromesa] = useState(false);
 
-    const categorias = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve (items);
-            reject("Server Caido");
-        }, 2000)
-
-    });
-
     useEffect(() => {
-        categorias
-            .then(res => {
-                setLlegoPromesa(true);
-                setItems(res);
-               
-            })
+        const base = getFirestore();
+        const coleccionItems = base.collection("categorias")
 
-            .catch(err => {
-                console.log(err);
-            })
-    });
+        coleccionItems.get().then((querySnapShot) => {
+            if (querySnapShot.size === 0) {
+                alert("No se encontraron productos para mostrar")
+            }
+
+            setItems(querySnapShot.docs.map((doc) => {
+                return {
+                    id: doc.id, ...doc.data()
+                }
+            }));
+            setLlegoPromesa(true);
+
+
+        }).catch(err => {
+            console.log(err);
+        })
+    }, []);
 
     return (
         <> {
