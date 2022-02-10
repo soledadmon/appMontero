@@ -11,60 +11,64 @@ import PostreFantasia from '../../Imagenes/PostreFantasia.jpg';
 import promo2_1 from '../../Imagenes/promo2_1.jpg';
 import promo4s from '../../Imagenes/promo4s.jpg';
 import promokg from '../../Imagenes/promokg.jpg';
+import firebase from "firebase/app";
+import "firebase/firestore";
+import { getFirestore } from "../../firebase/firebase";
 
 export default function ItemListContainer() {
 
     const { id } = useParams();
 
-    const [items, setItems] = useState(
-        
-        [
-        {id:'1', nombre: 'Helado de Vainilla',imagen: vainilla,  descripcion:'El mejor cremoso helado de vainilla', stock: 10, cantInicial: 2, categoriaId: '1' },
-        {id:'2', nombre: 'Helado de Chocolate',imagen:chocolate, descripcion:'Con todo el sabor a chocolate',stock: 4, cantInicial: 0, categoriaId: '1'},
-        {id:'3', nombre: 'Helado de Frutilla',imagen:frutilla,descripcion:'Super cremoso y con trozos de frutilla',stock: 4, cantInicial: 0, categoriaId: '1' },
-        {id:'4', nombre: 'Heledo de Dulce de Leche',imagen:dulceDeLecheGranizado, descripcion:'El mejor dulce de leche hecho helado',stock: 8, cantInicial: 4, categoriaId: '1' },
-        {id:'5', nombre: 'Postre Almendrado',imagen:PostreAlmendrado,  descripcion:'12 porciones',stock: 10, cantInicialId: 1, categoriaId: '2' },
-        {id:'6', nombre: 'Postre Dulce de Leche',imagen:PostreDDL,  descripcion:'8 porciones',stock: 5, cantInicialId: 1, categoriaId: '2' },
-        {id:'7', nombre: 'Postre Fantasía',imagen:PostreFantasia,  descripcion:'12 porciones',stock: 15, cantInicialId: 1, categoriaId: '2'},
-        {id:'8', nombre: 'Promo 1',imagen:promo2_1,  descripcion:'Promo 2x1',stock: 10, cantInicial: 1, categoriaId: '3'},
-        {id:'9', nombre: 'Promo 2',imagen:promo4s,  descripcion:'Promo 3Kg con 4 sabores',stock: 5, cantInicial: 1, categoriaId: '3'},
-        {id:'10', nombre:'Promo 3',imagen:promokg,  descripcion:'Promo por kg',stock: 15, cantInicial: 1, categoriaId: '3' }
-
-    ]
-
-    
-    
-    );
+    const [items, setItems] = useState();
     const [llegoPromesa, setLlegoPromesa] = useState(false);
 
-    const productos = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            (id > 0)?
-            resolve (items.filter(item => item.categoriaId == id))
-            :
-            resolve (items)
-            reject("Server Caido");
-        }, 2000)
-
-    });
-
     useEffect(() => {
-        productos
-            .then(res => {
-                setLlegoPromesa(true);
-                setItems(res);
-               
-            })
+        const base = getFirestore();
+        const coleccionItems = base.collection("items")
 
-            .catch(err => {
-                console.log(err);
-            })
-    });
+
+
+        coleccionItems.get().then((querySnapShot) => {
+            if (querySnapShot.size === 0) {
+                alert("No se encontraron productos para mostrar")
+            }
+
+            setItems(querySnapShot.docs.map((doc) => {
+                return {
+                    id: doc.id, ...doc.data()
+                }
+            }));
+            setLlegoPromesa(true);
+
+
+        }).catch(err => {
+            console.log(err);
+        })
+    }, []);
+
+
+    function evaluo(items) {
+
+        if (id > 0) {
+
+            let arrayAux = new Array();
+            items.forEach(element => {
+                if (element.categoriaId == id) {
+
+                    arrayAux.push(element);
+                }
+
+            });
+         items = arrayAux;
+        }
+        return items;
+    }
 
     return (
         <> {
             (llegoPromesa) ?
-                <ItemList items={items} />
+
+                <ItemList items={evaluo(items)} />
                 : <>Loading..</>
         }
         </>
