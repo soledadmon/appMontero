@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Switch, Route, useParams, Link } from 'react-router-dom';
 import CategoriaList from './CategoriaList.jsx';
-import sabores from '../../Imagenes/sabores.jpg';
-import postres from '../../Imagenes/postres.jpg';
-import promociones from '../../Imagenes/promociones.jpg';
 import firebase from "firebase/app";
 import "firebase/firestore";
 import { getFirestore } from "../../firebase/firebase";

@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import carrito from '../../Imagenes/carrito.png';
 import './CartWidget.css';
 import { cartContext } from "./CartProvider";
 
@@ -9,7 +8,7 @@ const CartWidget = () => {
     return (
         <>
             
-                <img id="carrito" src={carrito} />
+                <img id="carrito" src={'Img/carrito.png'} />
                 <p id = "texto"> {cantElemInCart} </p>
             
 

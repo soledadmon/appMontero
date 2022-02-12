@@ -6,7 +6,6 @@ import ItemListContainer from './Components/Productos/ItemListContainer';
 import CategoriaListContainer from './Components/Categorias/CategoriaListContainer';
 import ItemDetailConteiner from './Components/DetalleProductos/ItemDetailConteiner';
 import Cart from './Components/Carrito/Cart';
-import portada from './Imagenes/portada.jpg';
 import CartProvider from './Components/Carrito/CartProvider';
 
 //<ItemListContainer />
@@ -23,7 +22,7 @@ function App() {
             <Route exact path="/">
               <>
                 <div id="portada">
-                  <img id="imagenportada" src={portada} />
+                  <img id="imagenportada" src={'Img/portada.jpg'} />
                 </div>
               </>
             </Route>

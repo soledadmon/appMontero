@@ -4,7 +4,7 @@ import './Item.css';
 export default function Item({ item }) {
 
  
-
+console.log(item.imagen);
     
     return (
         <>
