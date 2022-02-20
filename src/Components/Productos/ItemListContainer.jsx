@@ -8,7 +8,7 @@ import { getFirestore } from "../../firebase/firebase";
 export default function ItemListContainer() {
 
     const { id } = useParams();
-
+    let paramId = parseInt(id);
     const [items, setItems] = useState();
     const [llegoPromesa, setLlegoPromesa] = useState(false);
     const base = getFirestore();
@@ -20,7 +20,7 @@ console.log(id);
     
         if (id > 0) {
             
-            coleccionItems = coleccionItems.where('categoriaId', '==', 1 )
+            coleccionItems = coleccionItems.where('categoriaId', '==', paramId )
             
         }
 
