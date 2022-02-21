@@ -13,7 +13,7 @@ export default function FormularioPago(carrito, total) {
     const departamentoRef = useRef();
     const emailRef = useRef();
     const celularRef = useRef();
-    
+
 
     function handleClick() {
 
@@ -54,22 +54,25 @@ export default function FormularioPago(carrito, total) {
             <div>
                 <h3>Ingrese sus datos:</h3>
 
-                <input type="text" name="name" ref={nombreRef} placeholder="Nombre y Apelllido" />
+                <input type="text" name="nombre" ref={nombreRef} placeholder="Nombre y Apelllido" />
                 <br />
 
-                <input type="text" name="mobile" ref={documentoRef} placeholder="Nro de Celular" />
+                <input type="text" name="celular" ref={documentoRef} placeholder="Nro de Celular" />
+                <br />
+
+                <input type="text" name="direccion" ref={direccionRef} placeholder="Direccion" />
                 <br />
 
                 <input type="text" name="email" ref={emailRef} placeholder="Email" />
                 <br />
 
-                <input type="text" name="state" ref={departamentoRef} placeholder="Provincia" />
+                <input type="text" name="departamento" ref={departamentoRef} placeholder="Departamento" />
                 <br />
 
-                <input type="text" name="city" ref={ciudadRef} placeholder="Ciudad" />
+                <input type="text" name="ciudad" ref={ciudadRef} placeholder="Ciudad" />
                 <br />
 
-                <input type="text" name="address" ref={direccionRef} placeholder="Direccion" />
+               <input type="text" name="celular" ref={celularRef} placeholder="Celular" />
                 <br />
 
                 <button onClick={() => handleClick()} > Comprar</button>

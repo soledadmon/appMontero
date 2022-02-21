@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { cartContext } from "./CartProvider";
 import CarritoItem from "./CarritoItem";
 import FormularioPago from "./FormularioPago";
-import { Link, NavLink  } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 
 const Cart = () => {
@@ -11,6 +11,9 @@ const Cart = () => {
     const { vaciarCarrito } = useContext(cartContext);
     const { cantElemInCart } = useContext(cartContext);
     const { sumPrecioElemInCart } = useContext(cartContext);
+    //<p><NavLink to={"/comprar"}><FormularioPago items={cart} total={sumPrecioElemInCart}/></NavLink></p>
+
+
 
     return (
         <>
@@ -26,9 +29,12 @@ const Cart = () => {
                         <button onClick={() => vaciarCarrito()}> Vaciar Carrito </button>
                         <p>{"El carrito tiene " + cantElemInCart + " elementos"} </p>
                         <p>{"El precio total es " + sumPrecioElemInCart + " pesos uruguayos"} </p>
-                        <p><NavLink to={"/comprar"}><FormularioPago items={cart} total={sumPrecioElemInCart}/></NavLink></p>
+                        <FormularioPago carrito={cart} total={sumPrecioElemInCart}/>
                     </div>
             }
+
+            
+
         </>
     )
 }
