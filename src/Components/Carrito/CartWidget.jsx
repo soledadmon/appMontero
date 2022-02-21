@@ -8,7 +8,7 @@ const CartWidget = () => {
     return (
         <>
             
-                <img id="carrito" src={'Img/carrito.png'} />
+                <img id="carrito" src={'/Img/carrito.png'} />
                 <p id = "texto"> {cantElemInCart} </p>
             
 
