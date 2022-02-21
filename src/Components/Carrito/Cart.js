@@ -29,6 +29,7 @@ const Cart = () => {
                         <button onClick={() => vaciarCarrito()}> Vaciar Carrito </button>
                         <p>{"El carrito tiene " + cantElemInCart + " elementos"} </p>
                         <p>{"El precio total es " + sumPrecioElemInCart + " pesos uruguayos"} </p>
+                        <p>{"Para realizar la compra deberá competar el formulario y clickear en el botón comprar"}</p>
                         <FormularioPago carrito={cart} total={sumPrecioElemInCart}/>
                     </div>
             }
