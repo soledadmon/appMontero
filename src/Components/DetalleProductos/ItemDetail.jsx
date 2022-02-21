@@ -5,8 +5,7 @@ import ItemCount from "../ItemCount/ItemCount.jsx";
 
 
 export default function ItemDetail({ item , mostrarItemCount, onAdd}) {
-    const dirImagen = item.imagen;
-    
+    console.log(item.imagen);
     return ( 
         <>
             <div id="divDetalle">

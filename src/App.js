@@ -32,7 +32,7 @@ function App() {
               <ItemListContainer />
             </Route>
 
-            <Route exact path="/productos">
+            <Route exact path="/productos/:id">
               <ItemListContainer />
             </Route>
 

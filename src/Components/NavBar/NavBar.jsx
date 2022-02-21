@@ -14,7 +14,7 @@ export default function NavBar() {
                     <li><NavLink to = {"/category/1"}>Sabores</NavLink></li>
                     <li><NavLink to = {"/category/2"}>Postres</NavLink></li> 
                     <li><NavLink to = {"/category/3"}>Promociones</NavLink></li>                   
-                    <li><NavLink to = {"/productos"}>Todos los productos</NavLink></li>
+                    <li><NavLink to = {"/productos/0"}>Todos los productos</NavLink></li>
                     <NavLink to = {"/cart"}><Carrito /></NavLink>
                     
                     

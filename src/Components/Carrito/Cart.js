@@ -2,8 +2,8 @@ import React, { useContext, useState } from "react";
 import { cartContext } from "./CartProvider";
 import CarritoItem from "./CarritoItem";
 import FormularioPago from "./FormularioPago";
-import { Link } from 'react-router-dom';
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink  } from 'react-router-dom';
+
 
 const Cart = () => {
 

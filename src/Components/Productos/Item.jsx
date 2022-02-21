@@ -1,11 +1,7 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import './Item.css';
-export default function Item({ item }) {
-
- 
-console.log(item.imagen);
-    
+export default function Item({ item }) {    
     return (
         <>
             <div id="divGustos">

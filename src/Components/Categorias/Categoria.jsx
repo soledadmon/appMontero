@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import './Categoria.css';
 export default function Categoria({ item }) {
+    console.log(item.imagen)
    
     return (
         <>

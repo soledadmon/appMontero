@@ -12,19 +12,19 @@ export default function ItemListContainer() {
     const [items, setItems] = useState();
     const [llegoPromesa, setLlegoPromesa] = useState(false);
     const base = getFirestore();
-   
-console.log(id);
+
+
     useEffect(() => {
 
-        let coleccionItems = base.collection("items") 
-    
+        let coleccion = base.collection("items")
+
         if (id > 0) {
-            
-            coleccionItems = coleccionItems.where('categoriaId', '==', paramId )
-            
+
+            coleccion = base.collection("items").where('categoriaId', '==', paramId)
         }
 
-        coleccionItems.get().then((querySnapShot) => {
+
+        coleccion.get().then((querySnapShot) => {
             if (querySnapShot.size === 0) {
                 alert("No se encontraron productos para mostrar")
             }
@@ -40,7 +40,7 @@ console.log(id);
         }).catch(err => {
             console.log(err);
         })
-    }, id);
+    }, [id]);
 
 
     return (
