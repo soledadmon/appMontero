@@ -37,7 +37,6 @@ export default function FormularioPago(carrito, total) {
 
         orders.add(miOrden)
             .then(({ id }) => {
-                console.log('orden ingresada: ' + id);
                 setOrderId(id);
             })
             .catch((err) => {
@@ -53,27 +52,16 @@ export default function FormularioPago(carrito, total) {
 
             <div>
                 <h3>Ingrese sus datos:</h3>
-
-                <input type="text" name="nombre" ref={nombreRef} placeholder="Nombre y Apelllido" />
-                <br />
-
-                <input type="text" name="celular" ref={documentoRef} placeholder="Nro de Celular" />
-                <br />
-
-                <input type="text" name="direccion" ref={direccionRef} placeholder="Direccion" />
-                <br />
-
-                <input type="text" name="email" ref={emailRef} placeholder="Email" />
-                <br />
-
-                <input type="text" name="departamento" ref={departamentoRef} placeholder="Departamento" />
-                <br />
-
-                <input type="text" name="ciudad" ref={ciudadRef} placeholder="Ciudad" />
-                <br />
-
-               <input type="text" name="celular" ref={celularRef} placeholder="Celular" />
-                <br />
+                <table class="formPago" border="1">
+                    <tr><input type="text" name="nombre" ref={nombreRef} placeholder="Nombre y Apelllido" /></tr>
+                    <tr><input type="text" name="celular" ref={documentoRef} placeholder="Nro de Celular" /></tr>
+                    <tr><input type="text" name="direccion" ref={direccionRef} placeholder="Direccion" /></tr>
+                    <tr><input type="text" name="email" ref={emailRef} placeholder="Email" /></tr>
+                    <tr><input type="text" name="departamento" ref={departamentoRef} placeholder="Departamento" /></tr>
+                    <tr><input type="text" name="ciudad" ref={ciudadRef} placeholder="Ciudad" /></tr>
+                    <tr><input type="text" name="celular" ref={celularRef} placeholder="Celular" /></tr>
+                </table>
+                <br></br>
 
                 <button onClick={() => handleClick()} > Comprar</button>
             </div>

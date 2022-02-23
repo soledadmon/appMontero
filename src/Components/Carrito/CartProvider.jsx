@@ -36,7 +36,7 @@ const CartProvaider = ({ children }) => {
 
     //retorna la cantidad de elementos del carrito
     const cantElemInCart = cart.reduce((total, item) => {
-        return total + item.cantidad
+        return (parseInt(total) + parseInt(item.cantidad))
     }, 0)
 
 
@@ -46,8 +46,10 @@ const CartProvaider = ({ children }) => {
     const sumPrecioElemInCart = cart.reduce((total, item) => {
         const cantidad = item.cantidad;
         const valor = item.item.precio;
-        const precioTotal = cantidad * valor;
-        return total + precioTotal;
+        const precioTotal = parseInt(cantidad) * parseInt(valor);
+        alert(cantidad)
+        alert(valor)
+        return (parseInt(total) + parseInt(precioTotal));
     }, 0)
 
        const isInCart = (id) => {

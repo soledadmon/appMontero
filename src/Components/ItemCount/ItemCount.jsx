@@ -4,21 +4,21 @@ export default function ItemCount({ item, onAdd }) {
     
     const [cantidadActual, setcantidadActual] = useState(item.cantInicial);
     function sumar() {
-        if (cantidadActual > item.stock - 1)
+        if (parseInt(cantidadActual) > parseInt(item.stock - 1))
             alert("Se a alcaczado la cantidad de elementos disponible, NO se pueden agregar mas productos");
         else {
-            let aux = cantidadActual;
-            aux = cantidadActual + 1;
+            let aux = parseInt(cantidadActual);
+            aux = parseInt(cantidadActual) + 1;
             setcantidadActual(aux);
         };
     }
 
     function restar() {
-        if (cantidadActual <= 0)
+        if (parseInt(cantidadActual) <= 0)
             alert("NO hay elementos a descontar");
         else {
-            let aux = cantidadActual;
-            aux = cantidadActual - 1;
+            let aux = parseInt(cantidadActual);
+            aux = parseInt(cantidadActual) - 1;
             setcantidadActual(aux);
         };
     }

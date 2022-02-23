@@ -1,0 +1,55 @@
+table {
+    margin-left: 150px;
+
+}
+
+
+td {
+    width: 200px;
+}
+
+#textos {
+    text-align: right;
+    font-weight: bold;
+}
+
+#valores {
+    text-align: left;
+    font-weight: bold;
+}
+
+#formAviso {
+    margin-left: 150px; 
+    width: 1300 px;
+}
+
+#aviso {
+    width: 1200px;
+    color: rgb(39, 38, 39);
+    font-size: large;
+    font-family: cursive;
+    background-color: beige;
+    border-collapse: separate;
+    text-align: center;
+    font-weight: bold; 
+}
+
+#vaciar {
+    text-align: center;
+    font-weight: bold;
+}
+
+button {
+    color: rgb(39, 38, 39);
+    font-size: large;
+}
+
+#pieForm {
+
+    color: rgb(39, 38, 39);
+    font-size: large;
+    font-family: cursive;
+    background-color: beige;
+    border-collapse: separate;
+
+}
