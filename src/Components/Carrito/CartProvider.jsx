@@ -47,8 +47,6 @@ const CartProvaider = ({ children }) => {
         const cantidad = item.cantidad;
         const valor = item.item.precio;
         const precioTotal = parseInt(cantidad) * parseInt(valor);
-        alert(cantidad)
-        alert(valor)
         return (parseInt(total) + parseInt(precioTotal));
     }, 0)
 

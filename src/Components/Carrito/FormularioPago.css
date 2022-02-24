@@ -1,0 +1,30 @@
+#formPago {
+
+    margin-left: 150px;
+    width: 1240px;
+}
+
+tr {
+
+    width: 1240px;
+    color: rgb(39, 38, 39);
+    font-size: large;
+    font-family: cursive;
+    background-color: beige;
+    border-collapse: separate;
+    text-align: left;
+    font-weight: bold;  
+
+}
+
+input{
+    margin-left: 40px;
+    width: 1140px;
+    color: rgb(39, 38, 39);
+    font-size: large;
+    font-family: cursive;
+    background-color: beige;
+    border-collapse: separate;
+    text-align: center;
+     
+}

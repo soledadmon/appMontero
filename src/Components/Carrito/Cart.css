@@ -14,24 +14,24 @@ td {
 }
 
 #valores {
-    text-align: left;
+    text-align: center;
     font-weight: bold;
 }
 
 #formAviso {
     margin-left: 150px; 
-    width: 1300 px;
+   
 }
 
 #aviso {
-    width: 1200px;
+    width: 1230px;
     color: rgb(39, 38, 39);
     font-size: large;
     font-family: cursive;
     background-color: beige;
     border-collapse: separate;
     text-align: center;
-    font-weight: bold; 
+    font-weight: bold;  
 }
 
 #vaciar {
