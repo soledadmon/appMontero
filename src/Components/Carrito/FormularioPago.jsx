@@ -57,9 +57,12 @@ export default function FormularioPago(carrito, total) {
                 date: firebase.firestore.Timestamp.fromDate(new Date())
             }
 
+            
+
             orders.add(miOrden)
                 .then(({ id }) => {
                     setOrderId(id);
+                    
                 })
                 .catch((err) => {
                     console.log(err);
@@ -73,9 +76,9 @@ export default function FormularioPago(carrito, total) {
     return (
 
         <>
-            {orderId && (<h1>Su order es {orderId}</h1>)}
-
-            <div>
+            {orderId && (<h1>Su order es {orderId}</h1>) }
+       
+            <div> 
                 <h3>Ingrese sus datos:</h3>
                 <table id="formPago" border="1">
                     <tr><input id="nombre" type="text" name="nombre" ref={nombreRef} placeholder="Nombre y Apelllido" /></tr>
@@ -86,9 +89,9 @@ export default function FormularioPago(carrito, total) {
                     <tr><input id="ciudad" type="text" name="ciudad" ref={ciudadRef} placeholder="Ciudad" /></tr>
                     <tr><input id="celular" type="text" name="celular" ref={celularRef} placeholder="Celular" /></tr>
                 </table>
-                <br></br>
+                <br></br> 
 
-                <button onClick={() => handleClick()} > Comprar</button>
+                <button id="idComprar" onClick={() => handleClick()} > Comprar</button>
             </div>
         </>
     );

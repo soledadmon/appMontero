@@ -34,6 +34,11 @@ const CartProvaider = ({ children }) => {
         setCart([]);
     }
 
+    const finalizarCompra = (orderId) => {
+        setCart([]);
+        (<h1>Su order es {orderId}</h1>)
+    }
+
     //retorna la cantidad de elementos del carrito
     const cantElemInCart = cart.reduce((total, item) => {
         return (parseInt(total) + parseInt(item.cantidad))
