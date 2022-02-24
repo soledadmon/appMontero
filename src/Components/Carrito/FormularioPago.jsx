@@ -90,8 +90,8 @@ export default function FormularioPago(carrito, total) {
                     <tr><input id="celular" type="text" name="celular" ref={celularRef} placeholder="Celular" /></tr>
                 </table>
                 <br></br> 
-
-                <button id="idComprar" onClick={() => handleClick()} > Comprar</button>
+                 {!orderId && 
+                <button id="idComprar" onClick={() => handleClick()} > Comprar</button>}
             </div>
         </>
     );
