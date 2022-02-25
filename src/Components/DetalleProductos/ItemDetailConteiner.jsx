@@ -1,10 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
-import { BrowserRouter, Switch, Route, useParams, Link } from 'react-router-dom';
+import {useParams } from 'react-router-dom';
 import ItemDetail from "./ItemDetail";
 import { cartContext } from "../Carrito/CartProvider";
-import firebase from "firebase/app";
 import "firebase/firestore";
 import { getFirestore } from "../../firebase/firebase";
+import swal from 'sweetalert';
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export default function ItemDetailContainer() {
 
@@ -23,13 +26,11 @@ export default function ItemDetailContainer() {
         {
             if(elem.size === 0)
             {
-                alert("No se encontraron productos para mostrar")
+                swal("Información","No se encontraron productos para mostrar","info")
             }
     
             setItem({id: elem.id, ...elem.data()});
-            setLlegoPromesa(true); 
-            console.log('imprimir elemento');  
-            console.log(elem);       
+            setLlegoPromesa(true);       
     
         }).catch(err => {
                 console.log(err);
@@ -42,7 +43,8 @@ export default function ItemDetailContainer() {
 
     function onAdd(cantidadActual) {
         agregarAlCarrito(item, cantidadActual)
-        alert("Agregue " + cantidadActual + " elementos")
+        toast.configure();
+        toast("Se agregaron " + cantidadActual + " elementos al carrito")
         setmostrarItemCount(false)
     }
 

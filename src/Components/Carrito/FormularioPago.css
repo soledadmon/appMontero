@@ -13,11 +13,11 @@ tr {
     background-color: beige;
     border-collapse: separate;
     text-align: left;
-    font-weight: bold;  
+    font-weight: bold;
 
 }
 
-input{
+input {
     margin-left: 40px;
     width: 1140px;
     color: rgb(39, 38, 39);
@@ -26,5 +26,5 @@ input{
     background-color: beige;
     border-collapse: separate;
     text-align: center;
-     
+
 }

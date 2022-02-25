@@ -1,34 +1,32 @@
-table{
+table {
   margin-left: 150px;
 
 }
 
 
 #cabeceraForm {
-  
-    color: rgb(39, 38, 39);
-    font-size: large;
-    font-family: cursive;
-    background-color: beige;
-    border-collapse: separate;
-    text-align: center;
-    font-weight: bold;
-   
-    
-  }
-  
-  td{
-    width: 200px;
-  }
 
-  #cuerpoForm {
-    
-    color: rgb(39, 38, 39);
-    font-size: medium;
-    font-family: cursive;
-    background-color: beige;
-    border-collapse: separate;
-    text-align: center;
-  }
+  color: rgb(39, 38, 39);
+  font-size: large;
+  font-family: cursive;
+  background-color: beige;
+  border-collapse: separate;
+  text-align: center;
+  font-weight: bold;
 
-  
+
+}
+
+td {
+  width: 200px;
+}
+
+#cuerpoForm {
+
+  color: rgb(39, 38, 39);
+  font-size: medium;
+  font-family: cursive;
+  background-color: beige;
+  border-collapse: separate;
+  text-align: center;
+}

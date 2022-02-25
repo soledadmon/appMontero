@@ -11,7 +11,7 @@ const Cart = () => {
     const { vaciarCarrito } = useContext(cartContext);
     const { cantElemInCart } = useContext(cartContext);
     const { sumPrecioElemInCart } = useContext(cartContext);
-
+    let idCompra = 0;
 
     return (
         <>
@@ -32,7 +32,7 @@ const Cart = () => {
                                 <td id="textos">Precio Total:</td>
                                 <td id="valores"> {"  " + sumPrecioElemInCart}</td>
                                 <td id="vaciar"> <button onClick={() => vaciarCarrito()}> Vaciar Carrito </button></td>
-                            </tr> 
+                            </tr>
                         </table>
                         <br></br> <br></br>
                         <table id="tablaAviso" border="1">
@@ -40,11 +40,10 @@ const Cart = () => {
                                 <td id="aviso"> <p>{"Para realizar la compra deberá competar el formulario y clickear en el botón comprar"}</p></td>
                             </tr>
                         </table>
-                        <FormularioPago carrito={cart} total={sumPrecioElemInCart} />
+                        <FormularioPago carrito={cart} total={sumPrecioElemInCart} idCompra={idCompra} />
+
                     </div>
             }
-
-
 
         </>
     )

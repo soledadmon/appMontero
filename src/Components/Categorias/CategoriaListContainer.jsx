@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { BrowserRouter, Switch, Route, useParams, Link } from 'react-router-dom';
 import CategoriaList from './CategoriaList.jsx';
-import firebase from "firebase/app";
 import "firebase/firestore";
 import { getFirestore } from "../../firebase/firebase";
+import swal from 'sweetalert';
 export default function CategoriaListContainer() {
     
     const [items, setItems] = useState();
@@ -15,7 +14,7 @@ export default function CategoriaListContainer() {
 
         coleccionItems.get().then((querySnapShot) => {
             if (querySnapShot.size === 0) {
-                alert("No se encontraron productos para mostrar")
+                swal("Información","No se encontraron productos para mostrar", "info")
             }
 
             setItems(querySnapShot.docs.map((doc) => {
@@ -27,7 +26,7 @@ export default function CategoriaListContainer() {
 
 
         }).catch(err => {
-            console.log(err);
+            swal("Error", err, "error");
         })
     }, []);
 

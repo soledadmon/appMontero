@@ -4,6 +4,7 @@ import ItemList from './ItemList.jsx';
 import firebase from "firebase/app";
 import "firebase/firestore";
 import { getFirestore } from "../../firebase/firebase";
+import swal from "sweetalert";
 
 export default function ItemListContainer() {
 
@@ -26,7 +27,7 @@ export default function ItemListContainer() {
 
         coleccion.get().then((querySnapShot) => {
             if (querySnapShot.size === 0) {
-                alert("No se encontraron productos para mostrar")
+                swal("No se encontraron productos para mostrar")
             }
 
             setItems(querySnapShot.docs.map((doc) => {
@@ -38,7 +39,7 @@ export default function ItemListContainer() {
 
 
         }).catch(err => {
-            console.log(err);
+            swal("Error", err, "error");
         })
     }, [id]);
 

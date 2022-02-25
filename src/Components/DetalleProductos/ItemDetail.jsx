@@ -1,11 +1,9 @@
-import React, { Component, useState } from "react";
+import React from "react";
 import { Link } from 'react-router-dom';
 import './ItemDetail.css';
 import ItemCount from "../ItemCount/ItemCount.jsx";
 
-
 export default function ItemDetail({ item , mostrarItemCount, onAdd}) {
-    console.log(item.imagen);
     return ( 
         <>
             <div id="divDetalle">

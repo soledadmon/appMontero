@@ -1,6 +1,5 @@
 import React, { createContext, useState } from "react";
 
-
 export const cartContext = createContext();
 
 const CartProvaider = ({ children }) => {
@@ -14,7 +13,7 @@ const CartProvaider = ({ children }) => {
             const posicion = cart.findIndex(elemento => elemento.item.id === producto.id)
             cart[posicion].cantidad = cart[posicion].cantidad + cantidad;
             setCart([...cart]);
-            console.log(cart);
+
         }
         else {
 
@@ -34,17 +33,11 @@ const CartProvaider = ({ children }) => {
         setCart([]);
     }
 
-    const finalizarCompra = (orderId) => {
-        setCart([]);
-        (<h1>Su order es {orderId}</h1>)
-    }
 
     //retorna la cantidad de elementos del carrito
     const cantElemInCart = cart.reduce((total, item) => {
         return (parseInt(total) + parseInt(item.cantidad))
     }, 0)
-
-
 
 
     //retorna la suma total de dinero acumulado en el carrito
@@ -55,7 +48,7 @@ const CartProvaider = ({ children }) => {
         return (parseInt(total) + parseInt(precioTotal));
     }, 0)
 
-       const isInCart = (id) => {
+    const isInCart = (id) => {
         //retorna true si existe el elemento
         return cart.some(element => element.item.id === id)
     }
@@ -64,7 +57,6 @@ const CartProvaider = ({ children }) => {
         <>
             <cartContext.Provider value={{ cart, agregarAlCarrito, quitarDelCarrito, vaciarCarrito, cantElemInCart, sumPrecioElemInCart }}>
                 {children}
-
             </cartContext.Provider>
         </>
     )
