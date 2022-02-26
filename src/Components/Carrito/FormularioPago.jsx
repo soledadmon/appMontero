@@ -18,7 +18,8 @@ export default function FormularioPago(carrito, total) {
     const email2Ref = useRef();
     const celularRef = useRef();
     let mensaje = "";
-
+    var expresion = /^[a-z][\w.-]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/i;
+    
 
     function validar() {
         let retorno = true;
@@ -32,10 +33,15 @@ export default function FormularioPago(carrito, total) {
             retorno = false;
             mensaje = "Debe competar todos los campos";
         }
+        else if (!expresion.test(document.getElementById('email').value)) {
+            mensaje =  "Debe ingresar una direccion de correo válida";
+            retorno = false;
+        }
         else if (document.getElementById('email').value != document.getElementById('email2').value) {
             mensaje = "No coinciden los correos ingresados";
             retorno = false;
         }
+    
         return retorno;
 
 
@@ -96,13 +102,13 @@ export default function FormularioPago(carrito, total) {
             {orderId && (<h1>Su order es {orderId}</h1>)}
 
             <div>
-                <h3>Ingrese sus datos:</h3>
+                <h1>Ingrese sus datos:</h1>
                 <table id="formPago" border="1">
                     <tr><input id="nombre" type="text" name="nombre" ref={nombreRef} placeholder="Nombre y Apelllido" /></tr>
                     <tr><input id="documento" type="text" name="documento" ref={documentoRef} placeholder="Nro de Documento" /></tr>
                     <tr><input id="direccion" type="text" name="direccion" ref={direccionRef} placeholder="Direccion" /></tr>
-                    <tr><input id="email" type="text" name="email" ref={emailRef} placeholder="Email" /></tr>
-                    <tr><input id="email2" type="text" name="email2" ref={email2Ref} placeholder="Verificar Email" /></tr>
+                    <tr><input id="email" type="text" name="email" ref={emailRef} placeholder="Email"/></tr>
+                    <tr><input id="email2" type="text" name="email2" ref={email2Ref} placeholder="Verificar Email"/></tr>
                     <tr><input id="departamento" type="text" name="departamento" ref={departamentoRef} placeholder="Departamento" /></tr>
                     <tr><input id="ciudad" type="text" name="ciudad" ref={ciudadRef} placeholder="Ciudad" /></tr>
                     <tr><input id="celular" type="text" name="celular" ref={celularRef} placeholder="Celular" /></tr>
