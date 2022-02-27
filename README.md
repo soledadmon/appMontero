@@ -1,7 +1,7 @@
 # IMPORTANTE
 EN LA CARPETA PUBLIC DEL PROYECTO Y UNA SUBCARPETA LLAMADA VIDEOS DONDE HAY UN VIDEO EN EL QUE SE MUESTRA UNA BREVE DESCRIPCION DE COMO SE COMPORTA LA APLICACION
 
-# Ejecucion 
+# Ejecucion  
 ejecutar el proyecto iniciar con el comando npm start
 
 Se utilizaron dos bibliotecas para el manejo de los mensajes, para esto se instalo a través de npm:
