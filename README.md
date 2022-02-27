@@ -27,7 +27,8 @@ El proyecto comenzará con una página de inicio, que contiene:
 # Estructura
 La página contendrá categorías propias de una heladería, dentro de cada categoría están los productos que corresponden a cada categoría.
 Cada producto tiene sus detalles y su contador para administrar a futro el stock.
-# Solo para cumplir con los requerimientos de esta entrega hay una ruta para mostrar todos los productos pero la idea a sería solo mostrarlos por categoría
+
+Solo para cumplir con los requerimientos de esta entrega hay una ruta para mostrar todos los productos pero la idea a sería solo mostrarlos por categoría
 
 # Rutas establecidas
 
