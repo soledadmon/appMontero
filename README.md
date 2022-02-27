@@ -5,7 +5,9 @@ EN LA CARPETA PUBLIC DEL PROYECTO HAY UNA SUBCARPETA LLAMADA VIDEOS DONDE HAY UN
 para ejecutar el proyecto iniciar con el comando npm start
 
 Se utilizaron dos bibliotecas externas para el manejo de los mensajes, para esto se instalo a través de npm:
+
 - npm install sweetalert --save:  Para mostrar todos los avisos 
+
 - npm add react-toastify:         Para informar los elementos agregados al carrito
 
 Para el manejo de información se creo una base de información utilizando firestore.
