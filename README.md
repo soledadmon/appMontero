@@ -1,24 +1,24 @@
 # IMPORTANTE
-EN LA CARPETA PUBLIC DEL PROYECTO Y UNA SUBCARPETA LLAMADA VIDEOS DONDE HAY UN VIDEO EN EL QUE SE MUESTRA UNA BREVE DESCRIPCION DE COMO SE COMPORTA LA APLICACION
+EN LA CARPETA PUBLIC DEL PROYECTO HAY UNA SUBCARPETA LLAMADA VIDEOS DONDE HAY UN VIDEO EN EL QUE SE MUESTRA UNA BREVE DESCRIPCION DE COMO SE COMPORTA LA APLICACION
 
 # Ejecucion  
-ejecutar el proyecto iniciar con el comando npm start
+para ejecutar el proyecto iniciar con el comando npm start
 
-Se utilizaron dos bibliotecas para el manejo de los mensajes, para esto se instalo a través de npm:
-npm install sweetalert --save
-npm add react-toastify
+Se utilizaron dos bibliotecas externas para el manejo de los mensajes, para esto se instalo a través de npm:
+npm install sweetalert --save:  Para mostrar todos los avisos 
+npm add react-toastify:         Para informar los elementos agregados al carrito
 
-Para el manejo de informacion se creo una base de información utilizando firestore.
-Para poder utilizar ferestore se debe instalar a travez de npm con el comando npm install firebase@8.8.0
+Para el manejo de información se creo una base de información utilizando firestore.
+Para poder utilizar firestore se debe instalar a travez de npm con el comando npm install firebase@8.8.0, 8.8.0 es la vesión utilizada en este proyecto
 
 # Inicio
 El proyecto comenzará con una página de inicio, que contiene:
 - la barra de navegación con el ítem carrito 
-- en el div principal que contiene una imagen importada de la carpeta imágenes
-- el cacceso a todos los productos
-- el acceso por categorías
-- el acceso a cada categoría
-- el desarollo del carro de compras con el formulario de pago y la comra preserbada en firestore
+- el div principal que contiene una imagen importada de la carpeta public -> imagenes
+- el cacceso a través de la navbar a todos los productos
+- el acceso a través de la navbar por categorías
+- el acceso a través de la navbar a cada categoría
+- el desarollo del carro de compras con el formulario de pago y la comra preservada en firestore
 
 # Estructura
 La página contendrá categorías propias de una heladería, dentro de cada categoría están los productos que corresponden a cada categoría.
@@ -37,25 +37,27 @@ Cada producto tiene sus detalles y su contador para administrar a futro el stock
 
 /item/:id      -> muestra el detalle del producto
 
+/cart          -> muestra el carrito de compras
+
 # navbar 
 - la navbar tiene prestablecidas todas las rutas salvo la ruta al detalle que solo se puede acceder desde la barra con /category/:id o desde el botón "Ver Detalle" que esta en el Item (Producto), la diferencia ente el producto y el detalle del producto se ve sobre todo en la categoria dos y tres no tanto en la 1, osea para los id > 4
 
 # Cart
-El carrito es accsesible desde toda la aplicación y en él se registran todos los productos que el cliente desee agregar para ello se utiliza un Contexo que provee la información llamado CartProvider.jsx
+El carrito es accsesible desde toda la aplicación y en él se registran todos los productos que el cliente desee agregar, para ello se utiliza un Contexo que provee la información llamado CartProvider.jsx
 En el carro se mustra el total de productos y el importe total de lo que sería la compra si el cliente lo confirma.
 
-Cuando el cliente seleccione el producto que deseea comprar se mostrará el detalle y en el detalle del producto se da la opcón de agregar el producto al carrito.
+Cuando el cliente seleccione el producto que deseea comprar se mostrará el detalle y en el detalle del producto se da la opción de agregar el producto al carrito.
 Una vez que se agrego el producto al carrito se le ofrese al cliente la opcion de terminar la compra.
 En cualquier momento el cliente puede cliquear en el icono del carrito de la navbar para acceder a lo que éste contenga.
 
-Se le informa al cliente que para poder finalizar la compra deberá competar los datos que se le piden, TODOS los datos solicitados son obligatorios, y como lo solicita le letra se valida que el mail sea valido y se verifica con un ingreso duplicado.
+Se le informa al cliente que para poder finalizar la compra deberá competar los datos que se le solicitan, TODOS los datos solicitados son obligatorios, y como lo solicita le letra se valida que el mail sea valido y se verifica con un ingreso duplicado.
 
 # Compra
 
 Cuando el cliente realiza la comra se le informa el número de id y no se da la opcion a cliquear en el boton de comprar para que la compra NO se ralice 2 veces por error.
 El acceso que queda visible es el botón que brinda la posibilidad al cliete a "Volver a comprar"
 
-Si no hay una orden de compra se muestra el botón comprar pero si la compra ya se realizo y se generó su id correspondiente, entonces se permite seguir cocmprado y se vacia el carrito.
+Si no hay una orden de compra se muestra el botón comprar, pero si la compra ya se realizo y se generó su id correspondiente, entonces se muestra el botón "Volver a Comprar" con el que se vacía el carrito y se permite seguir cocmprado.
 
 De la compra se preserva la información correspondiente al cliente(todos los datos del formulario), y la orden de compra(la lista de todos los productos ingresados al carro)
 
