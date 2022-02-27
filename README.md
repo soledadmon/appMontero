@@ -11,7 +11,9 @@ Se utilizaron dos bibliotecas externas para el manejo de los mensajes, para esto
 - npm add react-toastify:         Para informar los elementos agregados al carrito
 
 Para el manejo de información se creo una base de información utilizando firestore.
-Para poder utilizar firestore se debe instalar a travez de npm con el comando npm install firebase@8.8.0, 8.8.0 es la vesión utilizada en este proyecto
+Para poder utilizar firestore se debe instalar a través de npm con el comando npm install
+
+-  firebase@8.8.0, 8.8.0 es la vesión utilizada en este proyecto
 
 # Inicio
 El proyecto comenzará con una página de inicio, que contiene:
