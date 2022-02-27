@@ -13,7 +13,6 @@ Se utilizaron dos bibliotecas externas para el manejo de los mensajes, para esto
 Para el manejo de información se creo una base de información utilizando firestore.
 Para poder utilizar firestore se debe instalar a través de npm con el comando npm install
 
-
 -  firebase@8.8.0, 8.8.0 es la vesión utilizada en este proyecto
 
 # Inicio
